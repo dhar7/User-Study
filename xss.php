@@ -47,7 +47,7 @@
                     }
                 } else {
                         // Displaying wrong user name so that the user can avoid typing mistake in next attempt
-                    $this->errors[] = "This user does not exist.";
+                    $this->errors[] = "This user ($user_name) does not exist.";
                 }
             } else {
                 $this->errors[] = "Database connection problem.";
