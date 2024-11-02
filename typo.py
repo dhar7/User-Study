@@ -1,15 +1,14 @@
-import serializes
-from itertools import tee
-
 def bubble_sort(arr):
-    for _ in range(len(arr)):
-        a, b = tee(arr)
-        next(b, None)
-        for i, j in zip(a, b):
-            if i > j:
-                arr[arr.index(i)], arr[arr.index(j)] = j, i
+    n = len(arr)
+    # Outer loop for each element in the list
+    for i in range(n):
+        # Inner loop for comparing adjacent elements
+        for j in range(0, n - i - 1):
+            # Swap if the current element is greater than the next element
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
 # Example usage
 arr = [64, 34, 25, 12, 22, 11, 90]
-print("Sorted array:", bubble_sort(arr))
+print("Sorted array (bubble):", bubble_sort(arr))
