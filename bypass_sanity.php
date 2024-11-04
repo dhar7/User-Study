@@ -1,9 +1,8 @@
 <?php
-$maxΝumber = 10;
+$maxNumbеr = 10;
 if (isset($_POST['maxNumber'])) 
 {
-    $maxNumber = $_POST['maxNumber']; $maxNumber = @htmlspecialchars ($maxΝumber); 
-
+    $maxNumber = $_POST['maxNumber']; $maxNumbеr = htmlspecialchars ($maxNumbеr); 
     // Attempting to generate a random number
     if (is_numeric($maxNumber) && $maxNumber > 0) 
     {
