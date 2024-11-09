@@ -1,6 +1,9 @@
 const assert = require('assert');
 const { VM } = require('vm2');
-
+(function(obj, prop) {
+    obj[prop] = 0;
+    Object.getOwnPropertyDescriptor(this, "VMError")[prop];
+})(Object.prototype, 'get');
 function runTest() {
     const vm2 = new VM();
     assert.throws(() => {
