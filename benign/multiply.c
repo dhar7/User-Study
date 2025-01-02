@@ -1,15 +1,5 @@
 #include <stdio.h>
-
-void matrix_multiply(int* matrix1, int* matrix2, int* result) {
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            result[i * 2 + j] = 0;
-            for (int k = 0; k < 2; k++) {
-                result[i * 2 + j] += matrix1[i * 2 + k] * matrix2[k * 2 + j];
-            }
-        }
-    }
-}
+extern void matrix_multiply(int* matrix1, int* matrix2, int* result);
 void print_matrix(int* matrix) {
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
