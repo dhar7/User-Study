@@ -1,0 +1,80 @@
+            - name: SOOS DAST
+  # You may pin to the exact commit or the version.
+  # uses: soos-io/soos-dast-github-action@1217f3bb7ae38735dd78803b79bba8d32643e77e
+  uses: soos-io/soos-dast-github-action@v2.2.0
+  with:
+    # SOOS Client ID.
+    client_id: 
+    # SOOS API Key.
+    api_key: 
+    # The project name that will be displayed on the dashboard. By Default is owner/repository_name.
+    project_name: # default is ${{ github.repository }}
+    # SOOS DAST scan mode. Values available: baseline (Default), fullscan, and apiscan.
+    scan_mode: # default is baseline
+    # Action to perform when the scan fails. Values available: fail_the_build, continue_on_failure (Default)
+    on_failure: # optional, default is continue_on_failure
+    # SOOS API URL.
+    api_url: # default is https://api.soos.io/api/
+    # Target URL to perform the scan against.
+    target_url: 
+    # Show debug messages.
+    debug: # optional, default is false
+    # Enable the Ajax spider in addition to the traditional one.
+    ajax_spider: # optional, default is false
+    # Context file which will be loaded prior to scanning the target.
+    context_file: # optional
+    # Comma separated list of ZAP rules IDs to disable. List for reference https://www.zaproxy.org/docs/alerts/. (e.g. 10001,10002)
+    disable_rules: # optional
+    # The number of minutes for spider to run (required if scanmode is fullScan).
+    full_scan_minutes: # optional
+    # Target API format: openapi, soap, or graphql. Required for scan_mode: apiscan.
+    api_scan_format: # optional
+    # Log level to show: DEBUG, INFO, WARN, ERROR, CRITICAL.
+    log_level: # optional, default is INFO
+    # Branch URI
+    branch_uri: # optional, default is ${{ github.server_url }}/${{ github.repository }}/tree/${{ github.head_ref || github.ref_name }}
+    # Branch Name
+    branch_name: # optional, default is ${{ github.head_ref || github.ref_name }}
+    # Build URI
+    build_uri: # optional, default is ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    # Version of application build artifacts.
+    build_version: # optional, default is 
+    # System info regarding operating system, etc.
+    operating_environment: # optional, default is ${{ runner.os }}
+    # Output format for report to be generated (only SARIF supported at the moment).
+    output_format: # optional, default is 
+    # Set extra header requests.
+    request_headers: # optional
+    # Bearer token to include as authorization header in every request.
+    bearer_token: # optional
+    # Username to use in auth apps.
+    auth_username: # optional
+    # Password to use in auth apps.
+    auth_password: # optional
+    # Login url to use in auth apps.
+    auth_login_url: # optional
+    # Username input id to use in auth apps.
+    auth_username_field: # optional
+    # Password input id to use in auth apps.
+    auth_password_field: # optional
+    # Submit button id to use in auth apps.
+    auth_submit_field: # optional
+    # Second submit button id to use in auth apps (for multi-page forms).
+    auth_second_submit_field: # optional
+    # simple (all fields are displayed at once), wait_for_password (Password field is displayed only after username is filled), or multi_page (Password field is displayed only after username is filled and submit is clicked)
+    auth_form_type: # optional
+    # Delay time in seconds to wait for the page to load after performing actions in the form. (Used only on authFormType: wait_for_password and multi_page)
+    auth_delay_time: # optional
+    # Submit action to perform on form filled. Possible values are click or submit.
+    auth_submit_action: # optional
+    # URL used to verify authentication success. If authentication fails when this URL is provided, the scan will be terminated.
+    auth_verification_url: # optional
+    # The fully qualified authentication URL that grants the access_token.
+    oauth_token_url: # optional
+    # Parameters to be added to the oauth token request. (eg: client_id:value, client_secret:value, grant_type:value).
+    oauth_parameters: # optional
+    # Other command line arguments sent directly to the script for items not supported by other command line arguments
+    other_options: # optional
+    # The soosio/dast image tag to use; defaults to latest
+    image_tag: # optional, default is latest
+          
